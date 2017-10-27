@@ -19,3 +19,11 @@ from sklearn.metrics import accuracy_score
 ### and testing datasets, respectively
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
+
+
+from sklearn.svm import SVC
+clf = SVC(kernel='linear')
+
+clf.fit(features_train, labels_train)
+labels_pred = clf.predict(features_test)
+print accuracy_score(labels_pred, labels_test)
