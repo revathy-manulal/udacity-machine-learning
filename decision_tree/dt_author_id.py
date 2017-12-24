@@ -24,3 +24,7 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(features_train, labels_train)
 labels_pred = clf.predict(features_test)
 
+acc = accuracy_score(labels_pred, labels_test)
+    
+def submitAccuracies():
+  return {"acc":round(acc,3)}
