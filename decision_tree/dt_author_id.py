@@ -21,12 +21,16 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 from sklearn import tree
 from sklearn.metrics import accuracy_score
+clf1 = tree.DecisionTreeClassifier(min_samples_split=2)
+clf1 = clf1.fit(features_train, labels_train)
+labels_pred = clf1.predict(features_test)
 
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(features_train, labels_train)
-labels_pred = clf.predict(features_test)
+acc_min_samples_split_2 = accuracy_score(labels_pred, labels_test)
 
-acc = accuracy_score(labels_pred, labels_test)
-    
-def submitAccuracies():
-  return {"acc":round(acc,3)}
+
+clf2 = tree.DecisionTreeClassifier(min_samples_split=50)
+clf2 = clf2.fit(features_train, labels_train)
+labels_pred = clf2.predict(features_test)
+
+acc_min_samples_split_50 = accuracy_score(labels_pred, labels_test)
+
