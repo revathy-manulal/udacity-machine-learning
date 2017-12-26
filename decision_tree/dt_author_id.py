@@ -22,10 +22,10 @@ from sklearn.metrics import accuracy_score
 features_train, features_test, labels_train, labels_test = preprocess()
 
 # no of features used
-# print len(features_train[0])
+print len(features_train[0])
 
-clf1 = tree.DecisionTreeClassifier(min_samples_split=40)
-clf1 = clf1.fit(features_train, labels_train)
-labels_pred = clf1.predict(features_test)
-
-acc_min_samples_split_2 = accuracy_score(labels_pred, labels_test)
+# clf1 = tree.DecisionTreeClassifier(min_samples_split=40)
+# clf1 = clf1.fit(features_train, labels_train)
+# labels_pred = clf1.predict(features_test)
+#
+# acc_min_samples_split_2 = accuracy_score(labels_pred, labels_test)
